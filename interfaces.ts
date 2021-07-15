@@ -3,10 +3,10 @@ interface IData {
 }
 
 interface IDataFeed {
-  entry: ICellData[];
+  entry: IEntry[];
 }
 
-interface ICellData {
+interface IEntry {
   id: ICell;
   gsx$avengedby: ICell
   gsx$class: ICell
@@ -23,19 +23,4 @@ interface ICellData {
 
 interface ICell {
   $t: string;
-}
-
-interface ICleanData {
-  id: string;
-  avengedby: string;
-  class: string;
-  deathplace: string;
-  firsts: string;
-  killer: string;
-  legacy: string;
-  level: string;
-  name: string;
-  race: string;
-  rarespawns: string;
-  time: string;
 }
