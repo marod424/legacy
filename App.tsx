@@ -1,24 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { ActivityIndicator, FlatList, StyleSheet, Text, View } from 'react-native';
-import useData from './hooks/useData';
+import { StyleSheet, View } from 'react-native';
+import ToonList from './components/ToonList';
 
 export default function App() {
-  const { isLoading, data } = useData();
-  
   return (
     <View style={styles.container}>
-      
-      {isLoading ? <ActivityIndicator /> : (
-        <FlatList 
-          data={data}
-          keyExtractor={({ id }) => id}
-          renderItem={({ item }) => (
-            <Text>Name: {item.name}, Level: {item.level}</Text>
-          )}
-        />
-      )}
-
+      <ToonList />
       <StatusBar style="auto" />
     </View>
   );
